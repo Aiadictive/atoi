@@ -3,7 +3,7 @@ class Solution:
     # @return an integer
     def atoi(self, str):
         str = str.strip()
-        str = re.findall('(^[\+\-]*\d+)\D*', str)
+        str = re.findall('(^[\+\-]*[1-9]+)\D*', str)
         try:
             result = int(''.join(str))
             MAX_INT = 2147483647
@@ -16,3 +16,8 @@ class Solution:
                 return result
         except Exception:
             return 0
+def main():
+    sol=Solution()
+    print(sol.atoi("      -5642"))
+if __name__=="__main__":
+    main()
